@@ -42,7 +42,7 @@ while w:
     if st == "1":
         pass
     elif st == "2":
-            break
+        break
     else:
         print("invalid input")
         continue
@@ -89,44 +89,43 @@ while w:
                 else:
                     pass
 
-                if len(cd) > 5:
-                    cd[5] = word[5]
-                    print(cd)
-                    choice = input("what do u think is your answer?:").lower().strip()
-                    if choice == word:
+                    if len(cd) > 5:
+                       cd[5] = word[5]
+                       print(cd)
+                       choice = input("what do u think is your answer?:").lower().strip()
+                       if choice == word:
                         point += 4
                         win(point)
                         ask_continue()
-                    else:
-                        pass
-                else:
-                    print(f"Game Over , the answer was {word}")
-                    ask_continue()
-
-            if len(cd) > 6:
-                cd[7] = word[7]
-                print(cd)
-                choice = input("what do u think is your answer?:").lower().strip()
-                if choice == word:
-                    point += 3
-                    win(point)
-                    ask_continue()
-                else:
-                    pass
-                    cd[8] = word[8]
-                    print(cd)
-                    choice = input("what do u think is your answer?:").lower().strip()
-                    if choice == word:
-                        point += 2
-                        win(point)
-                        ask_continue()
+                       else:
+                         pass
                     else:
                         print(f"Game Over , the answer was {word}")
-                        continue
-            else:
-                print(f"Game Over , the answer was {word}")
-                ask_continue()
+                        ask_continue()
 
+                    if len(cd) > 6:
+                            cd[7] = word[7]
+                            print(cd)
+                            choice = input("what do u think is your answer?:").lower().strip()
+                            if choice == word:
+                                point += 3
+                                win(point)
+                                ask_continue()
+                            else:
+                                pass
+                                cd[8] = word[8]
+                                print(cd)
+                                choice = input("what do u think is your answer?:").lower().strip()
+                                if choice == word:
+                                    point += 2
+                                    win(point)
+                                    ask_continue()
+                                else:
+                                    print(f"Game Over , the answer was {word}")
+                                    continue
+                    else:
+                            print(f"Game Over , the answer was {word}")
+                            ask_continue()
 
 print("come back next time")
 
