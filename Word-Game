@@ -1,0 +1,138 @@
+
+import random
+
+def win(point):
+    print("You got it right")
+    print(f"your total score is {point}")
+    print("thanks for playing")
+
+
+def rng():
+    leg = len(word)
+    bracket = ["___", "___", "___", "___", "___", "___", "___", "___", "___", "___"]
+    cd = bracket[0:leg]
+    return cd
+
+def ask_continue():
+    while True:
+        print("*****************************")
+        print("do u wanna continue playing?: ")
+        print("*****************************")
+        again = input("1:continue , 2 exit:")
+        if again == "1":
+            return True
+        elif again == "2":
+            return False
+        else:
+            print("invalid action")
+
+words = ("apple" , "orange" , "banana" , "pineapple")
+point = 0
+
+w = True
+
+while w:
+    print("*******************************")
+    print("Welcome to Guess The Word Game")
+    print("*******************************")
+    st = input("1: enter || 2: exit:")
+
+    word = random.choice(words)
+
+    if st == "1":
+        pass
+    elif st == "2":
+            break
+    else:
+        print("invalid input")
+        continue
+
+    cd = rng()
+    for x in cd:
+        print(f"[={x}=]",end="")
+    print()
+    choice = input("what do u think is your answer?:").lower().strip()
+    if choice == word:
+        point += 10
+        win(point)
+        ask_continue()
+    else:
+        pass
+        length = len(cd)
+        cd[0] = word[0]
+        print(cd)
+        choice = input("what do u think is your answer?:").lower().strip()
+
+        if choice == word:
+            point += 8
+            win(point)
+            ask_continue()
+
+        else:
+            pass
+            cd[2] = word[2]
+            print(cd)
+            choice = input("what do u think is your answer?:").lower().strip()
+            if choice == word:
+                point += 6
+                win(point)
+                ask_continue()
+            else:
+                pass
+                cd[3] = word[3]
+                print(cd)
+                choice = input("what do u think is your answer?:").lower().strip()
+                if choice == word:
+                    point += 5
+                    win(point)
+                    ask_continue()
+                else:
+                    pass
+
+                if len(cd) > 5:
+                    cd[5] = word[5]
+                    print(cd)
+                    choice = input("what do u think is your answer?:").lower().strip()
+                    if choice == word:
+                        point += 4
+                        win(point)
+                        ask_continue()
+                    else:
+                        pass
+                else:
+                    print(f"Game Over , the answer was {word}")
+                    ask_continue()
+
+            if len(cd) > 6:
+                cd[7] = word[7]
+                print(cd)
+                choice = input("what do u think is your answer?:").lower().strip()
+                if choice == word:
+                    point += 3
+                    win(point)
+                    ask_continue()
+                else:
+                    pass
+                    cd[8] = word[8]
+                    print(cd)
+                    choice = input("what do u think is your answer?:").lower().strip()
+                    if choice == word:
+                        point += 2
+                        win(point)
+                        ask_continue()
+                    else:
+                        print(f"Game Over , the answer was {word}")
+                        continue
+            else:
+                print(f"Game Over , the answer was {word}")
+                ask_continue()
+
+
+print("come back next time")
+
+
+
+
+
+
+
